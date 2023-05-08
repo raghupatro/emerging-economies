@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'emer_econ_app/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'emer_econ_app/css/style.css' %}" />
+  <script src="{% static 'emer_econ_app/js/plotly.min.js' %}"></script>
+  <script src="{% static 'emer_econ_app/js/plotly.js' %}"></script>
+  <script src="{% static 'emer_econ_app/js/jquery-3.6.0.js' %}"></script>
+  <script src="{% static 'emer_econ_app/js/font-awesome.js' %}"></script>
+  <script src="{% static 'emer_econ_app/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'emer_econ_app/js/popper.min.js' %}"></script>
+  <title>Emerging Economies</title>
+  <style>
+    #loading {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: #fff no-repeat center center;
+      z-index: 99999;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top" class="rounded-circle text-light"><i class='fas fa-2x fa-angle-up'></i></button>
+
+  <div id="loading" class="p-3">
+    <div class="d-flex justify-content-center align-items-center h-100"><img src="{% static 'emer_econ_app/img/loader.gif' %}"
+        height="80" width="80" alt=""></div>
+  </div>
+
+  <div class="py-0 py-md-3 px-2 px-md-3 m-0 container-fluid container-lg mx-auto">
+      <div class="pb-2 d-md-flex justify-content-between d-none" style="border-bottom: 2px solid black;">
+        <div class="text-start">
+          <h2 class="orangeTxt fw-bold">At a Glance: India and Other Emerging Economies</h2>
+          <h5 class="fw-normal">Misra Centre for Financial Markets and Economy</h5>
+        </div>
+        <div class="text-end">
+          <a class="btn text-light fw-light" style="background-color:rgb(128,128,128);" target="_blank" href="https://www.iima.ac.in/web/areas-and-centres/research-centres/misra-centre-for-financial-markets-and-economy/"><span
+            class="d-lg-inline d-none">MCFME Homepage </span><i class="fa fa-home mx-1"></i></a>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center d-md-none" style="border-bottom: 2px solid black;">
+        <div class="text-start py-2">
+          <p class="orangeTxt fw-bold m-0" style="font-size: 12px!important;">At a Glance: India and Other Emerging Economies<br>
+          <small class="fw-normal" style="font-size: 11px!important;">Misra Centre for Financial Markets and Economy</small></p>
+        </div>
+        <div class="text-end">
+          <a class="text-dark fw-light" target="_blank" href="https://www.iima.ac.in/web/areas-and-centres/research-centres/misra-centre-for-financial-markets-and-economy/"><span
+            class="d-lg-inline d-none">MCFME Homepage </span><i class="fa fa-home mx-1"></i></a>
+        </div>
+      </div>
+  </div>
+
+  {% block content %}{% endblock content %}
+
+  <script>
+    var mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+</body>
+
+</html>

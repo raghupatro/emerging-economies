@@ -1,0 +1,14 @@
+{% extends 'emer_econ_app/header.html' %} {% load static %} {% block content %}
+<div id="error" class="p-3" style="height:50vh;width:100vw;">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div>
+      <h1 class="my-auto d-block">Something Went Wrong...</h1><br>
+      <a href="{% url 'home' %}" class="btn btn-primary p-3 m-3 d-block">Refresh Again</a>
+    </div>
+  </div>
+</div>
+<script>
+    var preloader = document.getElementById("loading");
+    preloader.style.display = "none";
+</script>
+{% endblock content %}

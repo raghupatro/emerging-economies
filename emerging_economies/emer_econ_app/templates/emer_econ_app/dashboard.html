@@ -1,0 +1,2037 @@
+{% extends 'emer_econ_app/header.html' %} {% load static %} {% block content %}
+
+<div>
+  <div class="d-flex justify-content-around container-lg container-fluid px-0">
+    <div
+      class="col-12 col-md-12 col-lg-12 mx-auto pt-2 pb-4 d-flex justify-content-around"
+    >
+      <div class="row container-fluid px-0">
+        <div
+          class="col-12 col-md-12 col-lg-12 mb-2 p-0 px-md-2"
+          style="font-size: 14px"
+        >
+          <h6
+            class="p-1 fw-normal lh-base mx-auto col-12 col-md-12 col-lg-12 d-none d-md-block"
+            style="color: black !important; text-align: justify"
+          >
+            This website compares a few key economic and financial indicators
+            for selected emerging economies, including India. These indicators
+            document the countries' economic performance, financial markets,
+            financial access, and human development trends.
+          </h6>
+          <small
+            class="p-2 fw-normal lh-base mx-auto col-12 col-md-12 col-lg-12 d-block d-md-none"
+            style="color: black !important; text-align: justify"
+            >This website compares a few key economic and financial indicators
+            for selected emerging economies, including India. These indicators
+            document the countries' economic performance, financial markets,
+            financial access, and human development trends.</small
+          >
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="grapha">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq1">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Country Real GDP (% of World GDP)<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot15"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: World Bank, MCFME</small
+                    >
+                    <!-- <small class="text-muted text-truncate">Source: <a
+                      href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD">World Bank, </a><a
+                      href="https://www.iima.ac.in/web/areas-and-centres/research-centres/misra-centre-for-financial-markets-and-economy/">MCFME</a></small>     -->
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: Share of world GDP calculated using real GDP in
+                      2015 US$.</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-block d-lg-none">
+                    <small class="text-muted mt-0"
+                      >Note: Share of world GDP calculated using real GDP in
+                      2015 US$.</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph13">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq2">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Human Development Index<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot14"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate"
+                      >Source: United Nations Development Programme,
+                      MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted"
+                      >Source: United Nations Development Programme,
+                      MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: HDI values range between 0 and 1.</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: HDI values range between 0 and 1.</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph0">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq3">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                GDP Per Capita (PPP)<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div id="myPlot1" style="width: 100%"></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: World Bank, MCFME</small
+                    >
+                    <!-- <small class="text-muted text-truncate">Source: <a
+                      href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD">World Bank, </a><a
+                      href="https://www.iima.ac.in/web/areas-and-centres/research-centres/misra-centre-for-financial-markets-and-economy/">MCFME</a></small> -->
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: Constant 2017 international dollars (PPP).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: Constant 2017 international dollars (PPP).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph7">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq4">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Market Capitalization (% of GDP)
+                <i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot8"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: World Bank, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: Market capitalization of listed domestic companies
+                      (% of GDP).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: Market capitalization of listed domestic companies
+                      (% of GDP).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph6">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq5">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                General Government Fiscal Balance (% of GDP)<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot7"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: IMF Fiscal Monitor, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: General Government Fiscal Balance (% of
+                      GDP).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: General Government Fiscal Balance (% of
+                      GDP).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph8">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq6">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                General Government Gross Debt (% of GDP)
+                <i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot9"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: IMF Fiscal Monitor, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: General Government Gross Debt (% of GDP).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: General Government Gross Debt (% of GDP).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph6">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq7">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Consumer Price Index (CPI) Inflation<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot6"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: IMF Consumer Price Index, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small
+                      class="text-muted text-truncate mt-0 d-lg-block d-none"
+                      >Note: Consumer Price Index Inflation.</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted mt-0 d-lg-none d-block"
+                      >Note: Consumer Price Index Inflation.</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graphb">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq8">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Indian Rupee Exchange Rates (Monthly Average)<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot16"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate"
+                      >Source: IMF International Financial Statistics,
+                      MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Source: IMF International Financial Statistics,
+                      MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: INR/EUR and INR/GBP exchange rates calculated from
+                      INR/USD and other currencies/USD.</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: INR/EUR and INR/GBP exchange rates calculated from
+                      INR/USD and other currencies/USD.</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph3">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq9">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Exports of Goods and Services (% of GDP)<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot4"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: World Bank, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: Exports of goods and services (% of GDP).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: Exports of goods and services (% of GDP).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph10">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq10">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Commercial Bank Deposits (% of GDP)<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot11"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate"
+                      >Source: IMF Financial Access Survey, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Source: IMF Financial Access Survey, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: Outstanding deposits in commercial bank (% of
+                      GDP).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: Outstanding deposits in commercial bank (% of
+                      GDP).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graphc">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq11">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Domestic Credit to Private Sector (% of GDP)<i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot17"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: World Bank, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: Domestic credit to private sector (% of
+                      GDP).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: Domestic credit to private sector (% of
+                      GDP).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-block d-md-none" />
+        <div class="col-12 col-md-6 col-lg-6 p-0 p-md-2 mb-3" id="graph12">
+          <div
+            class="card page-section border border-3 shadow"
+            style="border-color: #808080"
+          >
+            <a href="#faq12">
+              <h6 class="fw-bold greyBg blueTxt p-3 m-0">
+                Commercial Bank Branches (Per 100,000 Adults)
+                <i
+                  class="d-none d-lg-inline fa fa-info-circle float-end"
+                  aria-hidden="true"
+                ></i>
+              </h6>
+            </a>
+            <div class="card-body">
+              <div
+                id="myPlot13"
+                class="card-img-bottom"
+                style="width: 100%"
+              ></div>
+              <div class="row p-0 m-0">
+                <div class="col-12 col-lg-6 p-0 m-0">
+                  <p class="text-lg-start text-start p-0 m-0">
+                    <small class="text-muted text-truncate"
+                      >Source: IMF Financial Access Survey, MCFME</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-block d-none">
+                    <small class="text-muted text-truncate mt-0"
+                      >Note: Number of commercial banks plus their respective
+                      branches (per 100, 000 adults).</small
+                    >
+                  </p>
+                  <p class="text-lg-start text-start p-0 m-0 d-lg-none d-block">
+                    <small class="text-muted mt-0"
+                      >Note: Number of commercial banks plus their respective
+                      branches (per 100, 000 adults).</small
+                    >
+                  </p>
+                </div>
+                <p class="text-lg-end text-start col-12 col-md-6 p-0 m-0">
+                  <small class="text-muted mt-0">Most Recent: May 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light mb-5" id="FAQs">
+    <div>
+      <h2
+        class="mt-3 mb-5 blueTxt text-center fw-bold container-fluid container-lg d-md-block d-none"
+      >
+        Data Definition and Sources
+      </h2>
+      <p
+        class="mt-3 mb-4 blueTxt text-center fw-bold m-0 container-fluid container-lg d-block d-md-none"
+        style="font-size: 16px !important"
+      >
+        Data Definition and Sources<br />
+      </p>
+      <div class="accordion container-lg container-fluid" id="faqs">
+        <div class="accordion-item" id="faq1">
+          <h2 class="accordion-header" id="graph1">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph1c"
+              aria-expanded="true"
+              aria-controls="graph1c"
+            >
+              Country Real GDP (% of World GDP)
+            </button>
+          </h2>
+          <div
+            id="graph1c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph1"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                This indicator provides a comparative metric to analyze the
+                progress of an economy relative to other economies. In addition
+                to the absolute growth, it also captures the gain relative to
+                other emerging economies by comparing their share of world GDP.
+                <a
+                  style="font-style: italic"
+                  href="https://databank.worldbank.org/reports.aspx?source=2&type=metadata&series=NY.GDP.MKTP.KD"
+                  >(Source: World Bank)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq2">
+          <h2 class="accordion-header" id="graph2">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph2c"
+              aria-expanded="true"
+              aria-controls="graph2c"
+            >
+              Human Development Index
+            </button>
+          </h2>
+          <div
+            id="graph2c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph2"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                The Human Development Index (HDI) is a summary measure of
+                average achievement in key dimensions of human development: a
+                long and healthy life, education level, and decent standard of
+                living. The HDI is the geometric mean of normalized indices for
+                each of the three dimensions. The health dimension is assessed
+                by life expectancy at birth; the education dimension is measured
+                by the mean years of schooling for adults aged 25 years and more
+                and expected years of schooling for children of school entering
+                age. The standard of living dimension is measured by gross
+                national income per capita.
+                <a
+                  href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI"
+                  style="font-style: italic"
+                  >(Source: UNDP)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq3">
+          <h2 class="accordion-header" id="graph3">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph3c"
+              aria-expanded="true"
+              aria-controls="graph3c"
+            >
+              GDP Per Capita (PPP)
+            </button>
+          </h2>
+          <div
+            id="graph3c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph3"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                This indicator provides per capita values for the gross domestic
+                product (GDP) expressed in current international dollars
+                converted by purchasing power parity (PPP) conversion factor.
+                GDP is the sum of gross value added by all resident producers in
+                the country plus any product taxes and minus any subsidies not
+                included in the value of the products. The conversion factor is
+                a spatial price deflator and currency converter controlling
+                price level differences between countries.
+                <a
+                  style="font-style: italic"
+                  href="https://databank.worldbank.org/reports.aspx?source=2&type=metadata&series=NY.GDP.MKTP.PP.CD"
+                  >(Source: World Bank)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq4">
+          <h2 class="accordion-header" id="graph4">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph4c"
+              aria-expanded="true"
+              aria-controls="graph4c"
+            >
+              Market Capitalization (% of GDP)
+            </button>
+          </h2>
+          <div
+            id="graph4c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph4"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                The development of an economy&#39;s financial markets is closely
+                related to its overall development. Well-functioning financial
+                systems provide good and easily accessible information that can
+                lower transaction costs, improve resource allocation, and boost
+                economic growth. Market capitalization (also known as market
+                value) is the share price times the number of shares outstanding
+                (including their several classes) for listed domestic companies.
+                Investment funds, unit trusts, and companies whose only business
+                goal is to hold shares of other listed companies are excluded.
+                Data are end-of-year values.
+                <a
+                  style="font-style: italic"
+                  href="https://databank.worldbank.org/reports.aspx?source=2&amp;type=metadata&amp;series=CM.MKT.LCAP.GD.ZS"
+                  >(Source: World Bank)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq5">
+          <h2 class="accordion-header" id="graph5">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph5c"
+              aria-expanded="true"
+              aria-controls="graph5c"
+            >
+              General Government Fiscal Balance (% of GDP)
+            </button>
+          </h2>
+          <div
+            id="graph5c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph5"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                General government fiscal balance is the difference between
+                general government revenues and expenditures, showing how much
+                government spending is financed by the revenues collected each
+                year. A surplus occurs if, each year, the government collects
+                more revenues than it spends. Conversely, when the government
+                spends more than it receives in revenues, there is a deficit.
+                Consecutive deficits will increase debt levels and,
+                consequently, higher interest payments.
+                <a
+                  style="font-style: italic"
+                  href="https://data.imf.org/?sk=757a72b7-eece-470e-b6a1-d96b04b7014a"
+                  >(Source: IMF Fiscal Monitor)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq6">
+          <h2 class="accordion-header" id="graph6">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph6c"
+              aria-expanded="true"
+              aria-controls="graph6c"
+            >
+              General Government Gross Debt (% of GDP)
+            </button>
+          </h2>
+          <div
+            id="graph6c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph6"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                Gross debt represents all the liabilities that require future
+                payment of interest and/ or principal by the debtor. The
+                liabilities here include all debt liabilities in the form of
+                special drawing rights, currency and deposits, debt securities,
+                loans, pension, and standardized guarantee schemes, and other
+                accounts payable.
+                <a
+                  href="https://data.imf.org/?sk=757a72b7-eece-470e-b6a1-d96b04b7014a&amp;sId=1420755982661"
+                  style="font-style: italic"
+                  >(Source: IMF Fiscal Monitor)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq7">
+          <h2 class="accordion-header" id="graph7">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph7c"
+              aria-expanded="true"
+              aria-controls="graph7c"
+            >
+              Consumer Price Index (CPI) Inflation
+            </button>
+          </h2>
+          <div
+            id="graph7c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph7"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                Inflation is proxied by the year-to-year change in the consumer
+                price index (CPI). Governments and central banks also use CPI to
+                set inflation targets for monetary policy purposes. Consumer
+                Price Index (CPI) measures changes in the prices of goods and
+                services purchased or otherwise acquired by households, which
+                households use directly, or indirectly to satisfy their needs
+                and wants.
+                <a
+                  href="https://data.imf.org/?sk=4FFB52B2-3653-409A-B471-D47B46D904B5"
+                  style="font-style: italic"
+                  >(Source: IMF Consumer Price Index)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq8">
+          <h2 class="accordion-header" id="graph8">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph8c"
+              aria-expanded="true"
+              aria-controls="graph8c"
+            >
+              Indian Rupee Exchange Rates (Monthly Average)
+            </button>
+          </h2>
+          <div
+            id="graph8c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph8"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                An exchange rate is the value of one nation's currency versus
+                another nation's or economic zone's currency. For example, a
+                data point on this graph shows how many Indian Rupees (INR) it
+                takes to buy one currency unit of USD, GBP and EUR respectively.
+                <a
+                  href="https://www.investopedia.com/terms/e/exchangerate.asp"
+                  style="font-style: italic"
+                  >(Definition: Investopedia,</a
+                >
+                <a
+                  href="https://data.imf.org/?sk=4c514d48-b6ba-49ed-8ab9-52b0c1a0179b"
+                  style="font-style: italic"
+                >
+                  Data Source: IMF International Financial Statistics)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq9">
+          <h2 class="accordion-header" id="graph9">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph9c"
+              aria-expanded="true"
+              aria-controls="graph9c"
+            >
+              Exports of Goods and Services (% of GDP)
+            </button>
+          </h2>
+          <div
+            id="graph9c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph9"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                Exports of goods and services represent the value of all goods
+                and other market services provided to the rest of the world.
+                They include the value of merchandise, freight, insurance,
+                transport, travel, royalties, license fees, and other services,
+                such as communication, construction, financial, information,
+                business, personal, and government services. They exclude
+                compensation of employees and investment income (formerly called
+                factor services) and transfer payments.
+                <a
+                  href="https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS"
+                  style="font-style: italic"
+                  >(Source: World Bank)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq10">
+          <h2 class="accordion-header" id="graph10">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph10c"
+              aria-expanded="true"
+              aria-controls="graph10c"
+            >
+              Commercial Bank Deposits (% of GDP)
+            </button>
+          </h2>
+          <div
+            id="graph10c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph10"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                Commercial bank deposits refer to the total amount of all types
+                of outstanding deposits (including accrued interest) of resident
+                nonfinancial corporations and individuals from the household
+                sector.
+                <a
+                  href="https://data.imf.org/api/document/download?key=60927737"
+                  style="font-style: italic"
+                  >(Source: IMF Financial Access Survey)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq11">
+          <h2 class="accordion-header" id="graph11">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph11c"
+              aria-expanded="true"
+              aria-controls="graph11c"
+            >
+              Domestic Credit to Private Sector (% of GDP)
+            </button>
+          </h2>
+          <div
+            id="graph11c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph11"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                This indicator refers to financial resources provided to the
+                private sector by financial corporations, such as loans,
+                purchases of nonequity securities, trade credits, and other
+                accounts receivable that establish a claim for repayment.
+                <a
+                  href="https://data.worldbank.org/indicator/FS.AST.PRVT.GD.ZS"
+                  style="font-style: italic"
+                  >(Source: World Bank)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="accordion-item" id="faq12">
+          <h2 class="accordion-header" id="graph12">
+            <button
+              class="accordion-button greyBg blueTxt fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#graph12c"
+              aria-expanded="true"
+              aria-controls="graph12c"
+            >
+              Commercial Bank Branches (Per 100,000 Adults)
+            </button>
+          </h2>
+          <div
+            id="graph12c"
+            class="accordion-collapse collapse show"
+            aria-labelledby="graph12"
+            data-bs-parent="#faqs"
+          >
+            <div class="accordion-body">
+              <p>
+                This indicator is calculated as the total number of commercial
+                banks and their branches for every 100,000 adult population.
+                <a
+                  style="font-style: italic"
+                  href="https://data.imf.org/?sk=E5DCAB7E-A5CA-4892-A6EA-598B5463A34C&sId=1460054136937"
+                  >(Source: IMF Financial Access Survey)</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $.ajax({
+      url: "/dashboard",
+      success: function (result) {
+        // console.log(JSON.parse(result));
+        res = JSON.parse(result);
+        // console.log(res);
+
+        var bra = { name: "Brazil", color: "royalblue" };
+        var ind = { name: "India", color: "green" };
+        var idn = { name: "Indonesia", color: "orange" };
+        var mex = { name: "Mexico", color: "red" };
+        var tur = { name: "Turkey", color: "purple" };
+        var zaf = { name: "South Africa", color: "deeppink" };
+        var chn = { name: "China", color: "royalblue" };
+        var sgp = { name: "Singapore", color: "red" };
+        var aus = { name: "Australia", color: "deeppink" };
+        var euro = { name: "INR/EUR", color: "royalblue" };
+        var dollar = { name: "INR/USD", color: "green" };
+        var pound = { name: "INR/GBP", color: "red" };
+        var blank = { name: "", color: "" };
+
+        var ylabel1 = "Thousand US Dollars";
+        var ylabel4 = "% of GDP ";
+        var ylabel6 = "%";
+        var ylabel7 = "% of GDP";
+        var ylabel8 = "% of GDP";
+        var ylabel9 = "% of GDP";
+        var ylabel11 = "% of GDP";
+        var ylabel13 = "No. of branches (per 100,000 adults)";
+        var ylabel14 = "HDI";
+        var ylabel15 = "% of World GDP";
+        var ylabel16 = "INR / Other Currencies";
+        var ylabel17 = "% of GDP";
+
+        var yfactor1 = 1000;
+        var yfactor4 = 1;
+        var yfactor6 = 1;
+        var yfactor7 = 1;
+        var yfactor8 = 1;
+        var yfactor9 = 1;
+        var yfactor11 = 1;
+        var yfactor13 = 1;
+        var yfactor14 = 1;
+        var yfactor15 = 1;
+        var yfactor16 = 1;
+        var yfactor17 = 1;
+
+        var name1 = [bra, idn, ind, mex, tur, zaf];
+        var name4 = [bra, idn, ind, mex, tur, zaf];
+        var name6 = [mex, bra, ind, zaf, idn, blank];
+        var name7 = [bra, ind, idn, mex, zaf, tur];
+        var name8 = [bra, idn, ind, mex, tur, zaf];
+        var name9 = [bra, ind, idn, mex, zaf, tur];
+        var name11 = [ind, zaf, idn, mex, bra, tur];
+        var name13 = [idn, mex, zaf, ind, bra, tur];
+        var name14 = [bra, idn, ind, mex, tur, zaf];
+        var name15 = [bra, idn, ind, mex, tur, zaf];
+        var name16 = [dollar, pound, euro, blank, blank, blank];
+        var name17 = [bra, idn, ind, mex, tur, zaf];
+
+        var title1 = "GDP Per Capita (PPP)";
+        var title4 = "Exports of Goods and Services";
+        var title5 = "Exchange rate (INR/USD)";
+        var title6 = "Consumer Price Index (CPI) Inflation";
+        var title7 = "General Govt. Fiscal Balance";
+        var title8 = "Market Capitalization";
+        var title9 = "General Govt. Gross Debt";
+        var title11 = "Commercial Bank Deposits";
+        var title13 = "Commercial Bank Branches";
+        var title14 = "Human Development Index";
+        var title15 = "Country Real GDP (% of World GDP)";
+        var title16 = "Indian Rupee Exchange Rates";
+        var title17 = "Domestic Credit to Private Sector";
+
+        var numYear15 = 20;
+        var numYear14 = 20;
+        var numYear1 = 20;
+        var numYear8 = 20;
+        var numYear7 = 11;
+        var numYear9 = 11;
+        var numYear6 = 11;
+        var numYear16 = 12;
+        var numYear4 = 10;
+        var numYear11 = 10;
+        var numYear17 = 13;
+        var numYear13 = 13;
+
+        var data1 = JSON.parse(res.extDataJson1);
+        var data4 = JSON.parse(res.extDataJson4);
+        var data6 = JSON.parse(res.extDataJson6);
+        var data7 = JSON.parse(res.extDataJson7);
+        var data8 = JSON.parse(res.extDataJson8);
+        var data9 = JSON.parse(res.extDataJson9);
+        var data11 = JSON.parse(res.extDataJson11);
+        var data13 = JSON.parse(res.extDataJson13);
+        var data14 = JSON.parse(res.extDataJson14);
+        var data15 = JSON.parse(res.extDataJson15);
+        var data16 = JSON.parse(res.extDataJson16);
+        var data17 = JSON.parse(res.extDataJson17);
+
+        genrateWBMultiGraph(
+          data1,
+          name1,
+          title1,
+          ylabel1,
+          yfactor1,
+          numYear1,
+          "myPlot1",
+          "lines+markers",
+          "v"
+        );
+
+        genrateWBMultiGraph(
+          data4,
+          name4,
+          title4,
+          ylabel4,
+          yfactor4,
+          numYear4,
+          "myPlot4",
+          "lines+markers",
+          "v"
+        );
+
+        genrateMultiGraph(
+          data6,
+          name6,
+          title6,
+          ylabel6,
+          yfactor6,
+          numYear6,
+          "myPlot6",
+          "lines+markers",
+          "v"
+        );
+
+        genrateMultiGraph(
+          data7,
+          name7,
+          title7,
+          ylabel7,
+          yfactor7,
+          numYear7,
+          "myPlot7",
+          "lines+markers",
+          "v"
+        );
+
+        genrateWBMultiGraph(
+          data8,
+          name8,
+          title8,
+          ylabel8,
+          yfactor8,
+          numYear8,
+          "myPlot8",
+          "lines+markers",
+          "v"
+        );
+
+        genrateMultiGraph(
+          data9,
+          name9,
+          title9,
+          ylabel9,
+          yfactor9,
+          numYear9,
+          "myPlot9",
+          "lines+markers",
+          "v"
+        );
+
+        genrateMultiGraph(
+          data11,
+          name11,
+          title11,
+          ylabel11,
+          yfactor11,
+          numYear11,
+          "myPlot11",
+          "lines+markers",
+          "v"
+        );
+
+        genrateMultiGraph(
+          data13,
+          name13,
+          title13,
+          ylabel13,
+          yfactor13,
+          numYear13,
+          "myPlot13",
+          "lines+markers",
+          "v"
+        );
+
+        genrateHRDOMultiGraph(
+          data14,
+          name14,
+          title14,
+          ylabel14,
+          yfactor14,
+          "myPlot14",
+          "lines+markers",
+          "v"
+        );
+
+        genrateWBMultiGraph(
+          data15,
+          name15,
+          title15,
+          ylabel15,
+          yfactor15,
+          numYear15,
+          "myPlot15",
+          "lines+markers",
+          "v"
+        );
+
+        genrateMultiGraph(
+          data16,
+          name16,
+          title16,
+          ylabel16,
+          yfactor16,
+          numYear16,
+          "myPlot16",
+          "lines+markers",
+          "v"
+        );
+
+        genrateWBMultiGraph(
+          data17,
+          name17,
+          title17,
+          ylabel17,
+          yfactor17,
+          numYear17,
+          "myPlot17",
+          "lines+markers",
+          "v"
+        );
+
+        var preloader = document.getElementById("loading");
+        setInterval(() => {
+          preloader.style.display = "none";
+        }, 1000);
+      },
+      error: function (result) {
+        console.log("error");
+        var preloader = document.getElementById("loading");
+        window.location.href = "/errorPage";
+        preloader.style.display = "none";
+      },
+    });
+  });
+
+  function genrateMultiGraph(
+    data,
+    name,
+    title,
+    ylabel,
+    yfactor,
+    numYear,
+    plotId,
+    typeOfGraph,
+    orientationType
+  ) {
+    var x1Values = [];
+    var y1Values = [];
+
+    var x2Values = [];
+    var y2Values = [];
+
+    var x3Values = [];
+    var y3Values = [];
+
+    var x4Values = [];
+    var y4Values = [];
+
+    var x5Values = [];
+    var y5Values = [];
+
+    var x6Values = [];
+    var y6Values = [];
+
+    // console.log(data[0],plotId,typeOfGraph,orientationType);
+
+    try {
+      var data1 = data[0][0]["timeSeries"];
+      data1.forEach(genratedData1);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
+      var data2 = data[1][0]["timeSeries"];
+      data2.forEach(genratedData2);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
+      var data3 = data[2][0]["timeSeries"];
+      data3.forEach(genratedData3);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
+      var data4 = data[3][0]["timeSeries"];
+      data4.forEach(genratedData4);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
+      var data5 = data[4][0]["timeSeries"];
+      data5.forEach(genratedData5);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
+      var data6 = data[5][0]["timeSeries"];
+      data6.forEach(genratedData6);
+    } catch (err) {
+      console.log(err);
+    }
+
+    // console.log(data1);
+
+    function genratedData1(item, index) {
+      let date = new Date(item.time);
+      if (item.value != null) {
+        x1Values.push(date);
+        y1Values.push((item.value / yfactor).toFixed(3));
+      }
+    }
+
+    function genratedData2(item, index) {
+      let date = new Date(item.time);
+      if (item.value != null) {
+        x2Values.push(date);
+        y2Values.push((item.value / yfactor).toFixed(3));
+      }
+    }
+
+    function genratedData3(item, index) {
+      let date = new Date(item.time);
+      if (item.value != null) {
+        x3Values.push(date);
+        y3Values.push((item.value / yfactor).toFixed(3));
+      }
+    }
+
+    function genratedData4(item, index) {
+      let date = new Date(item.time);
+      if (item.value != null) {
+        x4Values.push(date);
+        y4Values.push((item.value / yfactor).toFixed(3));
+      }
+    }
+
+    function genratedData5(item, index) {
+      let date = new Date(item.time);
+      if (item.value != null) {
+        x5Values.push(date);
+        y5Values.push((item.value / yfactor).toFixed(3));
+      }
+    }
+
+    function genratedData6(item, index) {
+      let date = new Date(item.time);
+      if (item.value != null) {
+        x6Values.push(date);
+        y6Values.push((item.value / yfactor).toFixed(3));
+      }
+    }
+
+    if (name[0].name == "INR/USD") {
+      for (let y in y1Values) {
+        y2Values[y] = y1Values[y] / y2Values[y];
+        y3Values[y] = y1Values[y] / y3Values[y];
+      }
+
+      // console.log(x1Values);
+    }
+
+    var dataPlot = [
+      {
+        x: x1Values,
+        y: y1Values,
+        name: name[0].name,
+        type: typeOfGraph,
+        line: {
+          color: name[0].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x2Values,
+        y: y2Values,
+        name: name[1].name,
+        type: typeOfGraph,
+        line: {
+          color: name[1].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x3Values,
+        y: y3Values,
+        name: name[2].name,
+        type: typeOfGraph,
+        line: {
+          color: name[2].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x4Values,
+        y: y4Values,
+        name: name[3].name,
+        type: typeOfGraph,
+        line: {
+          color: name[3].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x5Values,
+        y: y5Values,
+        name: name[4].name,
+        type: typeOfGraph,
+        line: {
+          color: name[4].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x6Values,
+        y: y6Values,
+        name: name[5].name,
+        type: typeOfGraph,
+        line: {
+          color: name[5].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+    ];
+
+    var layout = {
+      autosize: true,
+
+      font: {
+        family: "Open Sans, serif",
+        // size: 12,
+        // color: '#7f7f7f'
+      },
+
+      margin: {
+        l: 20,
+        r: 20,
+        b: 100,
+        t: 100,
+        pad: 1,
+      },
+
+      paper_bgcolor: "#ffffff",
+      plot_bgcolor: "#ffffff",
+
+      xaxis: {
+        type: "date",
+        title: "Year",
+        ticks: "outside",
+        tickangle: "-45",
+        tick0: 0,
+        dtick: plotId == "myPlot6" || plotId == "myPlot16" ? "M12" : "M12",
+        tickformat:
+          plotId == "myPlot6" || plotId == "myPlot16" ? "%b-%Y" : "%Y",
+        fixedrange: true,
+        automargin: true,
+      },
+
+      yaxis: {
+        title: ylabel,
+        fixedrange: true,
+        automargin: true,
+      },
+
+      title: title,
+      showlegend: true,
+      legend: {
+        x: 0.5,
+        xanchor: "center",
+        {% comment %} myplot6 is the CPI graph, lower legend in it a little more, as xticks are wider {% endcomment %}
+        y: plotId == "myPlot6" ? -0.4 : -0.35,
+        orientation: "h",
+      },
+    };
+
+    const config = {
+      displayModeBar: false,
+    };
+
+    Plotly.newPlot(plotId, dataPlot, layout, config);
+  }
+
+  function genrateWBMultiGraph(
+    data,
+    name,
+    title,
+    ylabel,
+    yfactor,
+    numYear,
+    plotId,
+    typeOfGraph,
+    orientationType
+  ) {
+    // console.log(data);
+
+    var x1Values = [];
+    var y1Values = [];
+
+    var x2Values = [];
+    var y2Values = [];
+
+    var x3Values = [];
+    var y3Values = [];
+
+    var x4Values = [];
+    var y4Values = [];
+
+    var x5Values = [];
+    var y5Values = [];
+
+    var x6Values = [];
+    var y6Values = [];
+
+    var xWLD = [];
+    var yWLD = [];
+
+    data.forEach(genratedData);
+
+    function genratedData(item, index) {
+      let date = new Date(item.time);
+      if (item.value != null && item.countryCode == "WLD") {
+        xWLD.push(date);
+        yWLD.push(item.value);
+      } else {
+        if (item.value != null && index < numYear + 1) {
+          x1Values.push(date);
+          y1Values.push((item.value / yfactor).toFixed(3));
+        } else if (
+          item.value != null &&
+          index >= numYear + 1 &&
+          index < (numYear + 1) * 2
+        ) {
+          x2Values.push(date);
+          y2Values.push((item.value / yfactor).toFixed(3));
+        } else if (
+          item.value != null &&
+          index >= (numYear + 1) * 2 &&
+          index < (numYear + 1) * 3
+        ) {
+          x3Values.push(date);
+          y3Values.push((item.value / yfactor).toFixed(3));
+        } else if (
+          item.value != null &&
+          index >= (numYear + 1) * 3 &&
+          index < (numYear + 1) * 4
+        ) {
+          x4Values.push(date);
+          y4Values.push((item.value / yfactor).toFixed(3));
+        } else if (
+          item.value != null &&
+          index >= (numYear + 1) * 4 &&
+          index < (numYear + 1) * 5
+        ) {
+          x5Values.push(date);
+          y5Values.push((item.value / yfactor).toFixed(3));
+        } else if (item.value != null) {
+          x6Values.push(date);
+          y6Values.push((item.value / yfactor).toFixed(3));
+        }
+      }
+    }
+
+    for (let y in yWLD) {
+      y1Values[y] = ((y1Values[y] / yWLD[y]) * 100).toFixed(3);
+      y2Values[y] = ((y2Values[y] / yWLD[y]) * 100).toFixed(3);
+      y3Values[y] = ((y3Values[y] / yWLD[y]) * 100).toFixed(3);
+      y4Values[y] = ((y4Values[y] / yWLD[y]) * 100).toFixed(3);
+      y5Values[y] = ((y5Values[y] / yWLD[y]) * 100).toFixed(3);
+      y6Values[y] = ((y6Values[y] / yWLD[y]) * 100).toFixed(3);
+    }
+
+    var dataPlot = [
+      {
+        x: x1Values,
+        y: y1Values,
+        name: name[0].name,
+        type: typeOfGraph,
+        line: {
+          color: name[0].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x2Values,
+        y: y2Values,
+        name: name[1].name,
+        type: typeOfGraph,
+        line: {
+          color: name[1].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x3Values,
+        y: y3Values,
+        name: name[2].name,
+        type: typeOfGraph,
+        line: {
+          color: name[2].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x4Values,
+        y: y4Values,
+        name: name[3].name,
+        type: typeOfGraph,
+        line: {
+          color: name[3].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x5Values,
+        y: y5Values,
+        name: name[4].name,
+        type: typeOfGraph,
+        line: {
+          color: name[4].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x6Values,
+        y: y6Values,
+        name: name[5].name,
+        type: typeOfGraph,
+        line: {
+          color: name[5].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+    ];
+
+    var layout = {
+      autosize: true,
+
+      font: {
+        family: "Open Sans, serif",
+        // size: 12,
+        // color: '#7f7f7f'
+      },
+
+      margin: {
+        l: 20,
+        r: 20,
+        b: 100,
+        t: 100,
+        pad: 1,
+      },
+
+      paper_bgcolor: "#ffffff",
+      plot_bgcolor: "#ffffff",
+
+      xaxis: {
+        type: "date",
+        title: "Year",
+        ticks: "outside",
+        tickangle: "-45",
+        tick0: 0,
+        dtick: "M12",
+        tickformat: "%Y",
+        fixedrange: true,
+        automargin: true,
+      },
+
+      yaxis: {
+        title: ylabel,
+        fixedrange: true,
+        automargin: true,
+      },
+
+      title: title,
+      showlegend: true,
+      legend: {
+        x: 0.5,
+        xanchor: "center",
+        y: -0.35,
+        orientation: "h",
+      },
+    };
+
+    const config = {
+      displayModeBar: false,
+    };
+
+    Plotly.newPlot(plotId, dataPlot, layout, config);
+  }
+
+  function genrateHRDOMultiGraph(
+    data,
+    name,
+    title,
+    ylabel,
+    yfactor,
+    plotId,
+    typeOfGraph,
+    orientationType
+  ) {
+    var x1Values = [];
+    var y1Values = [];
+
+    var x2Values = [];
+    var y2Values = [];
+
+    var x3Values = [];
+    var y3Values = [];
+
+    var x4Values = [];
+    var y4Values = [];
+
+    var x5Values = [];
+    var y5Values = [];
+
+    var x6Values = [];
+    var y6Values = [];
+
+    var data1 = data[0];
+    var data2 = data[1];
+    var data3 = data[2];
+    var data4 = data[3];
+    var data5 = data[4];
+    var data6 = data[5];
+
+    // console.log(data1);
+
+    for (let a in data1) {
+      var date = new Date(a);
+      if (a != null) {
+        x1Values.push(date);
+        y1Values.push((data1[a] / yfactor).toFixed(3));
+      }
+    }
+
+    for (let b in data2) {
+      let date = new Date(b);
+      if (b != null) {
+        x2Values.push(date);
+        y2Values.push((data2[b] / yfactor).toFixed(3));
+      }
+    }
+
+    for (let c in data3) {
+      let date = new Date(c);
+      if (c != null) {
+        x3Values.push(date);
+        y3Values.push((data3[c] / yfactor).toFixed(3));
+      }
+    }
+
+    for (let d in data4) {
+      let date = new Date(d);
+      if (d != null) {
+        x4Values.push(date);
+        y4Values.push((data4[d] / yfactor).toFixed(3));
+      }
+    }
+
+    for (let e in data5) {
+      let date = new Date(e);
+      if (e != null) {
+        x5Values.push(date);
+        y5Values.push((data5[e] / yfactor).toFixed(3));
+      }
+    }
+
+    for (let f in data6) {
+      let date = new Date(f);
+      if (f != null) {
+        x6Values.push(date);
+        y6Values.push((data6[f] / yfactor).toFixed(3));
+      }
+    }
+
+    // console.log(x1Values, x2Values, x3Values, x4Values);
+    // console.log(y1Values, y2Values, y3Values, y4Values);
+
+    var dataPlot = [
+      {
+        x: x1Values,
+        y: y1Values,
+        name: name[0].name,
+        type: typeOfGraph,
+        line: {
+          color: name[0].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x2Values,
+        y: y2Values,
+        name: name[1].name,
+        type: typeOfGraph,
+        line: {
+          color: name[1].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x3Values,
+        y: y3Values,
+        name: name[2].name,
+        type: typeOfGraph,
+        line: {
+          color: name[2].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x4Values,
+        y: y4Values,
+        name: name[3].name,
+        type: typeOfGraph,
+        line: {
+          color: name[3].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x5Values,
+        y: y5Values,
+        name: name[4].name,
+        type: typeOfGraph,
+        line: {
+          color: name[4].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+      {
+        x: x6Values,
+        y: y6Values,
+        name: name[5].name,
+        type: typeOfGraph,
+        line: {
+          color: name[5].color,
+          width: 2,
+        },
+        orientation: orientationType,
+      },
+    ];
+
+    var layout = {
+      autosize: true,
+
+      font: {
+        family: "Open Sans, serif",
+        // size: 12,
+        // color: '#7f7f7f'
+      },
+
+      margin: {
+        l: 20,
+        r: 20,
+        b: 100,
+        t: 100,
+        pad: 1,
+      },
+
+      paper_bgcolor: "#ffffff",
+      plot_bgcolor: "#ffffff",
+
+      xaxis: {
+        type: "date",
+        title: "Year",
+        ticks: "outside",
+        tickangle: "-45",
+        tick0: 0,
+        dtick: "M36",
+        tickformat: "%Y",
+        fixedrange: true,
+        automargin: true,
+      },
+
+      yaxis: {
+        title: ylabel,
+        fixedrange: true,
+        automargin: true,
+      },
+
+      title: title,
+      showlegend: true,
+      legend: {
+        x: 0.5,
+        xanchor: "center",
+        y: -0.35,
+        orientation: "h",
+      },
+    };
+
+    const config = {
+      displayModeBar: false,
+    };
+
+    Plotly.newPlot(plotId, dataPlot, layout, config);
+  }
+</script>
+
+{% endblock content %}
