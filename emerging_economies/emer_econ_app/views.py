@@ -198,7 +198,16 @@ def dashboard(request):
 
     return JsonResponse(response, safe=False)
 
+def demodashboard(request):
+    currentYear = date.today().year
 
+    data = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF;WLD", "NY.GDP.MKTP.KD", str(currentYear-22), str(currentYear-2))
+    # data = imfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'GGXCNL_G01_GDP_PT', str(currentYear-12), str(currentYear-1))
+    # data = hrdoAPI('BRA,IDN,IND,MEX,TUR,ZAF')
+    
+    return JsonResponse(data, safe = False)
+
+    
 def home(request):
     return render(request, 'emer_econ_app/dashboard.html', {"activeHome": "active"})
 

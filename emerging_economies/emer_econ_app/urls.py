@@ -5,4 +5,5 @@ urlpatterns = [
     path('home',views.home,name="home"),
     path('errorPage',views.errorPage,name="error"),
     path('dashboard',views.dashboard,name="dashboard"),
+    path('demodashboard',views.demodashboard,name="demodashboard"),
 ]
