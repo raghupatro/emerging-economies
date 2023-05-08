@@ -82,6 +82,9 @@ html {
     color: #3f72af !important;
   }
   
+  .retry-button{
+    color: white! important;
+  }
   .bg-grad {
     background-color: #dedede;
     /* background-image: url("https://www.transparenttextures.com/patterns/climpek.png"); */
