@@ -140,14 +140,14 @@ def dashboard(request):
     extData14 = dummyhrdoAPI('BRA,IDN,IND,MEX,TUR,ZAF')  # OKK
     extData1 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "NY.GDP.PCAP.PP.KD", str(currentYear-22), str(currentYear-2))  # OKK
     extData8 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "CM.MKT.LCAP.GD.ZS", str(currentYear-22), str(currentYear-2))  # OKK
-    extData7 = dummyimfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'GGXCNL_G01_GDP_PT', str(currentYear-12), str(currentYear-1))  # OKK
-    extData9 = dummyimfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'G_XWDG_G01_GDP_PT', str(currentYear-12), str(currentYear-1))  # OKK
-    extData6 = dummyimfAPI('CPI', 'M', 'BR+ID+IN+MX+ZA', 'PCPI_PC_CP_A_PT',str(currentYear-12), str(currentYear-1))  # OKK
-    extData16 = dummyimfAPI('IFS', 'M', 'IN+GB+U2', 'ENDA_XDC_USD_RATE',str(currentYear-12), str(currentYear))  # ID+IN+TR+ZA // BR+MX
+    extData7 = imfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'GGXCNL_G01_GDP_PT', str(currentYear-12), str(currentYear-1))  # OKK
+    extData9 = imfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'G_XWDG_G01_GDP_PT', str(currentYear-12), str(currentYear-1))  # OKK
+    extData6 = imfAPI('CPI', 'M', 'BR+ID+IN+MX+ZA', 'PCPI_PC_CP_A_PT',str(currentYear-12), str(currentYear-1))  # OKK
+    extData16 = imfAPI('IFS', 'M', 'IN+GB+U2', 'ENDA_XDC_USD_RATE',str(currentYear-12), str(currentYear))  # ID+IN+TR+ZA // BR+MX
     extData4 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "NE.EXP.GNFS.ZS", str(currentYear-12), str(currentYear-2))  # OKK
-    extData11 = dummyimfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCLODCG_GDP_PT',str(currentYear-12), str(currentYear-2))  # OKK
+    extData11 = imfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCLODCG_GDP_PT',str(currentYear-12), str(currentYear-2))  # OKK
     extData17 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "FS.AST.PRVT.GD.ZS", str(currentYear-15), str(currentYear-2))  # OKK
-    extData13 = dummyimfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCBODCA_NUM',str(currentYear-15), str(currentYear-2))  # OKK
+    extData13 = imfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCBODCA_NUM',str(currentYear-15), str(currentYear-2))  # OKK
 
     extDataJson1 = json.dumps(extData1)
     extDataObj1 = json.loads(extDataJson1)
