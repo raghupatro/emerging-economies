@@ -34,7 +34,8 @@ def imfAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
         extData.append(newSeries)
     # with open('data.json', 'w') as jsonfile:
     #     json.dump(series, jsonfile)
-    return extData
+
+    return extData #returns a python list
 
 def wbAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     url = "http://api.worldbank.org/"+database+"/country/"+countries+"/indicator/"+indicators + \
@@ -69,7 +70,14 @@ def data(request):
     extData17 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "FS.AST.PRVT.GD.ZS", str(currentYear-15), str(currentYear-2))  # OKK
     extData13 = imfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCBODCA_NUM',str(currentYear-15), str(currentYear-2))  # OKK
 
+    # json loads -> returns an object from a string representing a json object.
+    # json dumps -> returns a string representing a json object from an (list) object.
+    # load and dump -> read/write from/to file instead of string
+
+
+    #converts the list object (extData1) to string object representing JSON(extDataJson1)
     extDataJson1 = json.dumps(extData1)
+    #converts the string object representing JSON(extDataJson1) to list object (extDataObj1) ..kyuu??
     extDataObj1 = json.loads(extDataJson1)
 
     extDataJson4 = json.dumps(extData4)
@@ -99,6 +107,8 @@ def data(request):
     extDataJson17 = json.dumps(extData17)
     extDataObj17 = json.loads(extDataJson17)
 
+
+    #creates a dict
     extResponse = {
         'extDataJson1': extDataJson1,
         'extDataObj1': extDataObj1,
@@ -122,8 +132,11 @@ def data(request):
         'extDataObj17': extDataObj17,
     }
 
+    #creates a string representing JSON
     response = json.dumps(extResponse)
 
+    #return a JSON response instead of HTTP response
+    #safe =True accepts only python dictionaries, false accepts all python data types, preferred to keep it false
     return JsonResponse(response, safe=False)
 
 
