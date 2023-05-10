@@ -8,6 +8,7 @@ import json
 from urllib3 import HTTPResponse
 from .models import Database
 
+#function to fetch and clean data from IMF API
 def imfAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     url = 'http://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/'+database+'/' + \
         frequency+'.'+countries+'.'+indicators + \
@@ -16,9 +17,6 @@ def imfAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     responseIMF = requests.get(url).json()
     jsonData = responseIMF
     series = jsonData['CompactData']['DataSet']['Series']
-    # if(database=="FAS" and indicators=="FCLODCG_GDP_PT"):
-    #     with open('datax.json', 'w') as jsonfile:
-    #         json.dump(series, jsonfile)
     extData = []
     for s in series:
         newSeries = []
@@ -34,11 +32,9 @@ def imfAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
         newSeries.append(dict(
             {"countryCode": countryCode, "indicatorCode": indicatorCode, "timeSeries": timeSeries}))
         extData.append(newSeries)
-    # with open('data.json', 'w') as jsonfile:
-    #     json.dump(series, jsonfile)
-
     return extData #returns a python list
 
+#function to fetch and clean data from World Bank API
 def wbAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     url = "http://api.worldbank.org/"+database+"/country/"+countries+"/indicator/"+indicators + \
         "?format=json"+"&date="+startPeriod+":"+endPeriod + \
@@ -52,23 +48,19 @@ def wbAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
                 {"countryCode": s["countryiso3code"], "indicatorCode": s["indicator"]["id"], "time": s["date"], "value": s["value"]}))
         except KeyError:
             pass
-    # with open('data.json', 'w') as jsonfile:
-    #     json.dump(extData, jsonfile)
     return extData#returns a python list
 
+#function to insert dummy data into Django's database, if it is empty
 def insertDummyDataintoDatabase():
     if(len(Database.objects.all())==0):
         datetime_india = datetime.now(pytz.timezone('Asia/Kolkata'))
         data = "{'foo': 'bar'}"
         dummy_data = Database(database=data, database_refresh_date=datetime_india)
         dummy_data.save()
-
-def showDatabase(request):
-    insertDummyDataintoDatabase()
-    database = Database.objects.all()[0].database
-    response = json.dumps(database)
-    return JsonResponse(response, safe=False)
     
+#function to refresh Django's database by fetching data from the APIs
+#called upon loading of refreshPage
+#returns most recent database update time
 def refreshDatabase(request):
     currentYear = date.today().year
 
@@ -101,7 +93,7 @@ def refreshDatabase(request):
     extDataJson17 = json.dumps(extData17)
 
 
-    #creates a dict
+    #create a dict
     extResponse = {
         'extDataJson1': extDataJson1,
         'extDataJson4': extDataJson4,
@@ -127,23 +119,24 @@ def refreshDatabase(request):
     database.database = response
     database.save()
 
-    return HttpResponse("database refreshed")
+    #format the data into proper format, and convert into a string
+    response = database.database_refresh_date.strftime('%Y/%m/%d %H:%M:%S %Z')
+    return HttpResponse(response)
 
-
-
+#function to send data from Django's database
+#called upon loading of the dashboard
 def data(request):
     database = Database.objects.all()[0].database
     return JsonResponse(database, safe=False)
 
-def lastDatabaseRefreshDate(request):
-    latest_refresh_date = Database.objects.all()[0].database_refresh_date
-    return HttpResponse(latest_refresh_date)
-    
+#view to load the dashboard
 def dashboard(request):
     return render(request, 'emer_econ_app/dashboard.html', {"activeHome": "active"})
 
+#view to load the refreshPage
 def refreshPage(request):
     return render(request, 'emer_econ_app/refreshPage.html', {})
 
+#view to load the errorPage
 def errorPage(request):
     return render(request, 'emer_econ_app/errorPage.html', {})
