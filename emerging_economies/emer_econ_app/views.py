@@ -56,10 +56,6 @@ def wbAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     #     json.dump(extData, jsonfile)
     return extData#returns a python list
 
-def database(request):
-    database = Database
-    return database
-
 def insertDummyDataintoDatabase():
     if(len(Database.objects.all())==0):
         datetime_india = datetime.now(pytz.timezone('Asia/Kolkata'))
@@ -122,15 +118,15 @@ def refreshDatabase(request):
     #creates a string representing JSON
     response = json.dumps(extResponse)
 
-    #saving the data to the database
+    #add dummy data to database if it is empty
+    insertDummyDataintoDatabase()
+
+    #saving the fetched data to the database
     database = Database.objects.all()[0]
     database.database_refresh_date = datetime.now(pytz.timezone('Asia/Kolkata'))
     database.database = response
     database.save()
 
-    #return a JSON response instead of HTTP response
-    #safe =True accepts only python dictionaries, false accepts all python data types, preferred to keep it false
-    # return JsonResponse(response, safe=False)
     return HttpResponse("database refreshed")
 
 
@@ -139,11 +135,15 @@ def data(request):
     database = Database.objects.all()[0].database
     return JsonResponse(database, safe=False)
 
-
+def lastDatabaseRefreshDate(request):
+    latest_refresh_date = Database.objects.all()[0].database_refresh_date
+    return HttpResponse(latest_refresh_date)
     
 def dashboard(request):
     return render(request, 'emer_econ_app/dashboard.html', {"activeHome": "active"})
 
+def refreshPage(request):
+    return render(request, 'emer_econ_app/refreshPage.html', {})
 
 def errorPage(request):
     return render(request, 'emer_econ_app/errorPage.html', {})

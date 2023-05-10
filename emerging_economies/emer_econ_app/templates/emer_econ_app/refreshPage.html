@@ -1,0 +1,33 @@
+{% extends 'emer_econ_app/header.html' %} {% load static %} {% block content %}
+<div id="error" class="p-3" style="height:50vh;width:100vw;">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div>
+      <h1 class="my-auto d-block">Database Refresh Successful</h1><br>
+      <h2 class="my-auto d-block">Latest Database Refresh: time...</h2><br>
+      <a class=" button btn btn-primary p-3 m-3 d-block" href="{% url 'dashboard' %}" role="button">Dashboard</a>
+    </div>
+  </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+          url: "/refreshDatabase",
+          success: function (result) {
+    
+            var preloader = document.getElementById("loading");
+            setInterval(() => {
+              preloader.style.display = "none";
+            }, 1000);
+          },
+          error: function (result) {
+            console.log("error");
+            var preloader = document.getElementById("loading");
+            window.location.href = "/errorPage";
+            preloader.style.display = "none";
+          },
+        });
+      });
+    var preloader = document.getElementById("loading");
+    preloader.style.display = "none";
+</script>
+{% endblock content %}
