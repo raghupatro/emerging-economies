@@ -1,10 +1,12 @@
 from urllib import response
 from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
-from datetime import date
+from datetime import date, datetime
+import pytz
 import requests
 import json
 from urllib3 import HTTPResponse
+from .models import Database
 
 def imfAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     url = 'http://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/'+database+'/' + \
@@ -52,23 +54,38 @@ def wbAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
             pass
     # with open('data.json', 'w') as jsonfile:
     #     json.dump(extData, jsonfile)
-    return extData
+    return extData#returns a python list
 
+def database(request):
+    database = Database
+    return database
 
-def data(request):
+def insertDummyDataintoDatabase():
+    if(len(Database.objects.all())==0):
+        datetime_india = datetime.now(pytz.timezone('Asia/Kolkata'))
+        data = "{'foo': 'bar'}"
+        dummy_data = Database(database=data, database_refresh_date=datetime_india)
+        dummy_data.save()
 
+def showDatabase(request):
+    insertDummyDataintoDatabase()
+    database = Database.objects.all()[0].database
+    response = json.dumps(database)
+    return JsonResponse(response, safe=False)
+    
+def refreshDatabase(request):
     currentYear = date.today().year
 
-    extData15 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF;WLD", "NY.GDP.MKTP.KD", str(currentYear-22), str(currentYear-2))  # OKK
-    extData1 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "NY.GDP.PCAP.PP.KD", str(currentYear-22), str(currentYear-2))  # OKK
-    extData8 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "CM.MKT.LCAP.GD.ZS", str(currentYear-22), str(currentYear-2))  # OKK
-    extData7 = imfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'GGXCNL_G01_GDP_PT', str(currentYear-12), str(currentYear-1))  # OKK
-    extData9 = imfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'G_XWDG_G01_GDP_PT', str(currentYear-12), str(currentYear-1))  # OKK
-    extData6 = imfAPI('CPI', 'M', 'BR+ID+IN+MX+ZA', 'PCPI_PC_CP_A_PT',str(currentYear-12), str(currentYear-1))  # OKK
-    extData4 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "NE.EXP.GNFS.ZS", str(currentYear-12), str(currentYear-2))  # OKK
-    extData11 = imfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCLODCG_GDP_PT',str(currentYear-12), str(currentYear-2))  # OKK
-    extData17 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "FS.AST.PRVT.GD.ZS", str(currentYear-15), str(currentYear-2))  # OKK
-    extData13 = imfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCBODCA_NUM',str(currentYear-15), str(currentYear-2))  # OKK
+    extData15 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF;WLD", "NY.GDP.MKTP.KD", str(currentYear-22), str(currentYear-2))
+    extData1 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "NY.GDP.PCAP.PP.KD", str(currentYear-22), str(currentYear-2))
+    extData8 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "CM.MKT.LCAP.GD.ZS", str(currentYear-22), str(currentYear-2))
+    extData7 = imfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'GGXCNL_G01_GDP_PT', str(currentYear-12), str(currentYear-1))
+    extData9 = imfAPI('FM', 'A', 'BR+ID+IN+MX+TR+ZA', 'G_XWDG_G01_GDP_PT', str(currentYear-12), str(currentYear-1))
+    extData6 = imfAPI('CPI', 'M', 'BR+ID+IN+MX+ZA', 'PCPI_PC_CP_A_PT',str(currentYear-12), str(currentYear-1))
+    extData4 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "NE.EXP.GNFS.ZS", str(currentYear-12), str(currentYear-2))
+    extData11 = imfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCLODCG_GDP_PT',str(currentYear-12), str(currentYear-2))
+    extData17 = wbAPI("v2", "A", "BRA;IDN;IND;MEX;TUR;ZAF", "FS.AST.PRVT.GD.ZS", str(currentYear-15), str(currentYear-2))
+    extData13 = imfAPI('FAS', 'A', 'BR+ID+IN+MX+TR+ZA', 'FCBODCA_NUM',str(currentYear-15), str(currentYear-2))
 
     # json loads -> returns an object from a string representing a json object.
     # json dumps -> returns a string representing a json object from an (list) object.
@@ -77,67 +94,50 @@ def data(request):
 
     #converts the list object (extData1) to string object representing JSON(extDataJson1)
     extDataJson1 = json.dumps(extData1)
-    #converts the string object representing JSON(extDataJson1) to list object (extDataObj1) ..kyuu??
-    extDataObj1 = json.loads(extDataJson1)
-
     extDataJson4 = json.dumps(extData4)
-    extDataObj4 = json.loads(extDataJson4)
-
     extDataJson6 = json.dumps(extData6)
-    extDataObj6 = json.loads(extDataJson6)
-
     extDataJson7 = json.dumps(extData7)
-    extDataObj7 = json.loads(extDataJson7)
-
     extDataJson8 = json.dumps(extData8)
-    extDataObj8 = json.loads(extDataJson8)
-
     extDataJson9 = json.dumps(extData9)
-    extDataObj9 = json.loads(extDataJson9)
-
     extDataJson11 = json.dumps(extData11)
-    extDataObj11 = json.loads(extDataJson11)
-
     extDataJson13 = json.dumps(extData13)
-    extDataObj13 = json.loads(extDataJson13)
-
     extDataJson15 = json.dumps(extData15)
-    extDataObj15 = json.loads(extDataJson15)
-
     extDataJson17 = json.dumps(extData17)
-    extDataObj17 = json.loads(extDataJson17)
 
 
     #creates a dict
     extResponse = {
         'extDataJson1': extDataJson1,
-        'extDataObj1': extDataObj1,
         'extDataJson4': extDataJson4,
-        'extDataObj4': extDataObj4,
         'extDataJson6': extDataJson6,
-        'extDataObj6': extDataObj6,
         'extDataJson7': extDataJson7,
-        'extDataObj7': extDataObj7,
         'extDataJson8': extDataJson8,
-        'extDataObj8': extDataObj8,
         'extDataJson9': extDataJson9,
-        'extDataObj9': extDataObj9,
         'extDataJson11': extDataJson11,
-        'extDataObj11': extDataObj11,
         'extDataJson13': extDataJson13,
-        'extDataObj13': extDataObj13,
         'extDataJson15': extDataJson15,
-        'extDataObj15': extDataObj15,
         'extDataJson17': extDataJson17,
-        'extDataObj17': extDataObj17,
     }
 
     #creates a string representing JSON
     response = json.dumps(extResponse)
 
+    #saving the data to the database
+    database = Database.objects.all()[0]
+    database.database_refresh_date = datetime.now(pytz.timezone('Asia/Kolkata'))
+    database.database = response
+    database.save()
+
     #return a JSON response instead of HTTP response
     #safe =True accepts only python dictionaries, false accepts all python data types, preferred to keep it false
-    return JsonResponse(response, safe=False)
+    # return JsonResponse(response, safe=False)
+    return HttpResponse("database refreshed")
+
+
+
+def data(request):
+    database = Database.objects.all()[0].database
+    return JsonResponse(database, safe=False)
 
 
     

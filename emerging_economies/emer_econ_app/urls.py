@@ -4,4 +4,6 @@ urlpatterns = [
     path('',views.dashboard,name="dashboard"),
     path('errorPage',views.errorPage,name="errorPage"),
     path('data',views.data,name="data"),
+    path('showDatabase',views.showDatabase,name="showDatabase"),
+    path('refreshDatabase',views.refreshDatabase,name="refreshDatabase"),
 ]
