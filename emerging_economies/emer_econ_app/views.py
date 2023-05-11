@@ -8,6 +8,12 @@ import json
 from urllib3 import HTTPResponse
 from .models import Database
 
+#view to check if server can fetch data from IMFAPI
+def checkIMFAPI(request):
+    url = "http://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/FM/A.BR+ID+IN+MX+TR+ZA.GGXCNL_G01_GDP_PT?startPeriod=2011&endPeriod=2022"
+    response = requests.get(url).json()
+    return JsonResponse(response)
+
 #function to fetch and clean data from IMF API
 def imfAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     url = 'http://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/'+database+'/' + \
