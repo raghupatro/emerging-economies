@@ -14,6 +14,12 @@ def checkIMFAPI(request):
     response = requests.get(url).json()
     return JsonResponse(response)
 
+#view to check if server can fetch data from WBAPI
+def checkWBAPI(request):
+    url = "http://api.worldbank.org/v2/country/BRA;IDN;IND;MEX;TUR;ZAF/indicator/FS.AST.PRVT.GD.ZS?format=json&date=2008:2021&frequency=A&per_page=1000"
+    response = requests.get(url).json()
+    return JsonResponse(response,safe=False)
+
 #function to fetch and clean data from IMF API
 def imfAPI(database, frequency, countries, indicators, startPeriod, endPeriod):
     url = 'http://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/'+database+'/' + \

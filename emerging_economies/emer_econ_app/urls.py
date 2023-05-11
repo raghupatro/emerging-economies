@@ -7,4 +7,5 @@ urlpatterns = [
     path('refreshPage',views.refreshPage,name="refreshPage"),
     path('refreshDatabase',views.refreshDatabase,name="refreshDatabase"),
     path('checkIMFAPI',views.checkIMFAPI,name="checkIMFAPI"),
+    path('checkWBAPI',views.checkWBAPI,name="checkWBAPI"),
 ]
