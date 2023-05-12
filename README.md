@@ -39,3 +39,9 @@
 ### urls.py maps the urls in this app to different views
 
 ### views.py contains all our views
+
+
+## current status
+
++ uploaded and hosted on raghupatro.pythonanywhere.com
++ shows error on refreshing database as pythonanywhere does not allow requests to IMF API from the backend
